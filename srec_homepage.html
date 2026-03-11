@@ -1,0 +1,2469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santhiram Engineering College – Autonomous | Nandyal | NAAC Accredited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0B1D3A;
+  --navy-mid: #122244;
+  --gold: #C9A227;
+  --gold-light: #E8C547;
+  --gold-pale: #F5E6B8;
+  --white: #FAFAF8;
+  --cream: #F2EDE4;
+  --slate: #8A99B3;
+  --red-accent: #C23B22;
+  --teal: #1A7A8A;
+  --glow: rgba(201,162,39,0.35);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--navy);
+  overflow-x: hidden;
+}
+
+/* ── UTILITY BAR ── */
+.utility-bar {
+  background: var(--navy);
+  color: rgba(255,255,255,0.75);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 6px 0;
+  position: relative;
+  z-index: 200;
+}
+.utility-bar .container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.ub-badges {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.ub-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-right: 1px solid rgba(255,255,255,0.15);
+  padding-right: 18px;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+}
+.ub-badge:last-child { border-right: none; padding-right: 0; }
+.ub-badge .dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+.ub-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.ub-links a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.2s;
+}
+.ub-links a:hover { color: var(--gold); }
+.ub-links a.btn-erp {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 4px 14px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+/* ── HEADER ── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(11,29,58,0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(201,162,39,0.2);
+  transition: all 0.3s;
+}
+header.scrolled {
+  background: rgba(11,29,58,0.98);
+  box-shadow: 0 4px 40px rgba(0,0,0,0.4);
+}
+.header-inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  height: 72px;
+}
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.logo-icon {
+  width: 52px; height: 52px;
+  background: linear-gradient(135deg, var(--gold), #8B6A14);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 22px;
+  color: var(--navy);
+  letter-spacing: -1px;
+}
+.logo-text { line-height: 1.2; }
+.logo-text .name {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--white);
+  display: block;
+}
+.logo-text .sub {
+  font-size: 10.5px;
+  color: var(--gold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+nav a {
+  color: rgba(255,255,255,0.82);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+nav a:hover { color: var(--gold); background: rgba(201,162,39,0.1); }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.btn-tour {
+  color: rgba(255,255,255,0.8);
+  font-size: 13px;
+  font-weight: 500;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-tour:hover { background: rgba(255,255,255,0.14); color: #fff; }
+.btn-apply {
+  background: linear-gradient(135deg, var(--gold), #A07A10);
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+}
+.btn-apply:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(201,162,39,0.45);
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Animated background grid */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,162,39,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,162,39,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridShift 20s linear infinite;
+}
+@keyframes gridShift {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(60px); }
+}
+
+/* Radial glow */
+.hero-glow {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(201,162,39,0.12) 0%, transparent 70%);
+  top: -200px;
+  right: -100px;
+  animation: glowPulse 6s ease-in-out infinite alternate;
+}
+.hero-glow2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(26,122,138,0.14) 0%, transparent 70%);
+  bottom: -100px;
+  left: 100px;
+  animation: glowPulse 8s ease-in-out infinite alternate-reverse;
+}
+@keyframes glowPulse {
+  from { opacity: 0.6; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1.1); }
+}
+
+/* Floating particles */
+.particles { position: absolute; inset: 0; pointer-events: none; }
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: floatParticle linear infinite;
+  opacity: 0;
+}
+
+@keyframes floatParticle {
+  0% { opacity: 0; transform: translateY(100vh) scale(0); }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.3; }
+  100% { opacity: 0; transform: translateY(-100px) scale(1); }
+}
+
+.hero-inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.hero-left {}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201,162,39,0.1);
+  border: 1px solid rgba(201,162,39,0.3);
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 30px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s ease both;
+}
+.hero-tag::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: blink 1.5s infinite;
+}
+@keyframes blink {
+  0%,100% { opacity: 1; } 50% { opacity: 0.2; }
+}
+
+.hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 5vw, 68px);
+  font-weight: 900;
+  line-height: 1.08;
+  color: var(--white);
+  margin-bottom: 24px;
+  animation: fadeUp 0.9s 0.15s ease both;
+}
+.hero-h1 em {
+  font-style: normal;
+  color: var(--gold);
+  position: relative;
+}
+.hero-h1 em::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  border-radius: 2px;
+}
+
+.hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 500px;
+  animation: fadeUp 0.9s 0.28s ease both;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+  animation: fadeUp 0.9s 0.35s ease both;
+}
+.pill {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.75);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+.pill.gold {
+  background: rgba(201,162,39,0.12);
+  border-color: rgba(201,162,39,0.35);
+  color: var(--gold-light);
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.9s 0.42s ease both;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), #9A7210);
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.2px;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 36px rgba(201,162,39,0.5);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 13px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  transition: all 0.25s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.5);
+}
+
+/* Hero stats */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin-top: 56px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  animation: fadeUp 0.9s 0.5s ease both;
+}
+.hstat {
+  background: rgba(255,255,255,0.03);
+  padding: 22px 20px;
+  text-align: center;
+  transition: background 0.2s;
+}
+.hstat:hover { background: rgba(201,162,39,0.08); }
+.hstat-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--gold);
+  display: block;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.hstat-lbl {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+/* Hero right: 3D visual */
+.hero-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeUp 1s 0.2s ease both;
+}
+.campus-3d {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+}
+.campus-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  backdrop-filter: blur(10px);
+  aspect-ratio: 4/3;
+}
+.campus-visual {
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(201,162,39,0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 75% 65%, rgba(26,122,138,0.2) 0%, transparent 45%),
+    linear-gradient(135deg, #0B1D3A 0%, #1a3060 50%, #0f2248 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SVG campus illustration */
+.campus-svg-wrap {
+  width: 90%;
+  height: 90%;
+  position: relative;
+}
+
+/* Floating info cards */
+.float-card {
+  position: absolute;
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  animation: floatCard 4s ease-in-out infinite alternate;
+}
+.float-card .fc-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: var(--gold);
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+.float-card .fc-lbl { opacity: 0.6; font-size: 11px; }
+.float-card:nth-child(1) { top: -20px; left: -30px; animation-delay: 0s; }
+.float-card:nth-child(2) { bottom: -10px; left: 10px; animation-delay: 1s; }
+.float-card:nth-child(3) { top: 30px; right: -30px; animation-delay: 2s; }
+
+@keyframes floatCard {
+  from { transform: translateY(0px) rotate(-1deg); }
+  to { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.4);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  z-index: 2;
+  animation: fadeUp 1s 1s ease both;
+}
+.scroll-mouse {
+  width: 22px; height: 36px;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 6px;
+}
+.scroll-wheel {
+  width: 3px; height: 8px;
+  background: var(--gold);
+  border-radius: 2px;
+  animation: scrollWheel 2s ease-in-out infinite;
+}
+@keyframes scrollWheel {
+  0%,100% { opacity: 1; transform: translateY(0); }
+  50% { opacity: 0.3; transform: translateY(8px); }
+}
+
+/* ── SECTION COMMONS ── */
+section { padding: 100px 0; }
+.container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.section-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label::before {
+  content: '';
+  width: 28px; height: 2px;
+  background: var(--gold);
+  display: inline-block;
+}
+.section-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 3.5vw, 46px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 16px;
+  color: #5A6A7A;
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ── NUMBERS / TRUST ── */
+.numbers-sec {
+  background: var(--navy);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+.numbers-sec::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,162,39,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,162,39,0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+  z-index: 1;
+}
+.ncard {
+  background: rgba(255,255,255,0.02);
+  padding: 40px 24px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: default;
+  position: relative;
+}
+.ncard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 40px; height: 2px;
+  background: var(--gold);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.ncard:hover { background: rgba(201,162,39,0.06); }
+.ncard:hover::before { opacity: 1; }
+.ncard-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+.ncard-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--gold);
+  display: block;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.ncard-lbl {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+/* ── PROGRAMS ── */
+.programs-sec { background: var(--cream); }
+.programs-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 44px;
+  background: rgba(11,29,58,0.06);
+  padding: 6px;
+  border-radius: 10px;
+  display: inline-flex;
+}
+.ptab {
+  padding: 10px 26px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  border: none;
+  background: transparent;
+  color: rgba(11,29,58,0.55);
+}
+.ptab.active {
+  background: var(--navy);
+  color: var(--gold);
+  box-shadow: 0 4px 16px rgba(11,29,58,0.25);
+}
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.pcard {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 30px 28px;
+  border: 1px solid rgba(11,29,58,0.07);
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.pcard::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--teal));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.pcard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(11,29,58,0.12);
+  border-color: rgba(201,162,39,0.2);
+}
+.pcard:hover::before { transform: scaleX(1); }
+.pcard-icon {
+  width: 52px; height: 52px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.pcard h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.pcard-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: #7A8A9A;
+  margin-bottom: 16px;
+}
+.pcard-meta span { display: flex; align-items: center; gap: 4px; }
+.pcard-badge {
+  display: inline-block;
+  background: rgba(201,162,39,0.1);
+  border: 1px solid rgba(201,162,39,0.3);
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.pcard-link {
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: gap 0.2s;
+}
+.pcard-link:hover { gap: 10px; }
+
+/* ── RESEARCH ── */
+.research-sec { background: var(--white); }
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 50px;
+}
+.rcard {
+  border-radius: 16px;
+  padding: 32px 28px;
+  border: 1px solid rgba(11,29,58,0.08);
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.rcard:nth-child(1) { background: linear-gradient(135deg, var(--navy) 0%, #1a3060 100%); color: white; }
+.rcard:nth-child(2) { background: linear-gradient(135deg, #1A7A8A 0%, #0D4E57 100%); color: white; }
+.rcard:nth-child(3) { background: linear-gradient(135deg, #8B1A4A 0%, #5A0D2F 100%); color: white; }
+.rcard:nth-child(4) { background: linear-gradient(135deg, #2D5016 0%, #1A3010 100%); color: white; }
+.rcard:nth-child(5) { background: linear-gradient(135deg, #6B3A00 0%, #3D2100 100%); color: white; }
+.rcard:nth-child(6) { background: var(--navy); color: white; }
+.rcard:hover { transform: translateY(-5px) scale(1.01); box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+.rcard-icon { font-size: 36px; margin-bottom: 16px; }
+.rcard h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+.rcard p { font-size: 14px; opacity: 0.72; line-height: 1.6; margin-bottom: 20px; }
+.rcard-num { font-family: 'Space Mono', monospace; font-size: 32px; font-weight: 700; opacity: 0.9; color: var(--gold); }
+
+/* ── PLACEMENTS ── */
+.placements-sec {
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.placement-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.placement-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 36px;
+}
+.ps-card {
+  background: var(--navy);
+  border-radius: 14px;
+  padding: 26px 22px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.ps-card::before {
+  content: '';
+  position: absolute;
+  top: -20px; right: -20px;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: rgba(201,162,39,0.1);
+}
+.ps-card.highlight { background: linear-gradient(135deg, var(--gold), #8B6A14); color: var(--navy); grid-column: span 2; }
+.ps-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+}
+.ps-card.highlight .ps-num { color: var(--navy); font-size: 46px; }
+.ps-lbl { font-size: 12px; opacity: 0.65; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+.ps-card.highlight .ps-lbl { opacity: 0.7; }
+
+.recruiters-section { margin-top: 50px; }
+.recruiters-track {
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+}
+.recruiters-track::before, .recruiters-track::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+.recruiters-track::before { left: 0; background: linear-gradient(90deg, var(--cream), transparent); }
+.recruiters-track::after { right: 0; background: linear-gradient(-90deg, var(--cream), transparent); }
+
+.recruiters-slider {
+  display: flex;
+  gap: 0;
+  animation: slideLogos 28s linear infinite;
+  width: max-content;
+}
+@keyframes slideLogos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.rec-logo {
+  background: var(--white);
+  border: 1px solid rgba(11,29,58,0.08);
+  border-radius: 10px;
+  padding: 14px 28px;
+  margin: 0 8px;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--navy);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.rec-logo:hover {
+  background: var(--navy);
+  color: var(--gold);
+  border-color: var(--navy);
+}
+
+/* ── COLLABORATIONS MAP ── */
+.collab-sec { background: var(--navy); color: white; }
+.world-map-wrap {
+  position: relative;
+  margin-top: 50px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.world-map-svg {
+  width: 100%;
+  display: block;
+}
+.map-dots circle {
+  animation: mapPulse 2s ease-in-out infinite alternate;
+}
+@keyframes mapPulse {
+  from { r: 4; opacity: 0.8; }
+  to { r: 7; opacity: 0.4; }
+}
+
+.collab-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.cs-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 28px 24px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.cs-card:hover { background: rgba(201,162,39,0.08); border-color: rgba(201,162,39,0.2); }
+.cs-num { font-family: 'Space Mono', monospace; font-size: 36px; color: var(--gold); font-weight: 700; display: block; }
+.cs-lbl { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 6px; }
+
+/* ── WHY CHOOSE ── */
+.why-sec { background: var(--white); }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 50px;
+}
+.why-card {
+  border-radius: 16px;
+  padding: 32px 26px;
+  border: 1.5px solid rgba(11,29,58,0.07);
+  background: var(--white);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.why-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,162,39,0.03), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.why-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(11,29,58,0.1); border-color: rgba(201,162,39,0.25); }
+.why-card:hover::after { opacity: 1; }
+.why-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.why-card h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+.why-card p { font-size: 13.5px; color: #6A7A8A; line-height: 1.65; }
+
+/* ── CAMPUS LIFE ── */
+.campus-sec {
+  background: var(--navy);
+  color: white;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+.campus-scroll-wrap {
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin-top: 50px;
+  padding-bottom: 60px;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+}
+.campus-scroll-wrap:active { cursor: grabbing; }
+.campus-scroll-wrap::-webkit-scrollbar { display: none; }
+.campus-scroll {
+  display: flex;
+  gap: 20px;
+  padding: 0 30px;
+  width: max-content;
+}
+.cl-card {
+  width: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.cl-card:hover { transform: translateY(-8px); border-color: rgba(201,162,39,0.3); }
+.cl-visual {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  position: relative;
+  overflow: hidden;
+}
+.cl-card:nth-child(1) .cl-visual { background: linear-gradient(135deg, #1a2060, #0a1040); }
+.cl-card:nth-child(2) .cl-visual { background: linear-gradient(135deg, #1A7A8A, #0D4E57); }
+.cl-card:nth-child(3) .cl-visual { background: linear-gradient(135deg, #8B1A4A, #5A0D2F); }
+.cl-card:nth-child(4) .cl-visual { background: linear-gradient(135deg, #5A4000, #8B6200); }
+.cl-card:nth-child(5) .cl-visual { background: linear-gradient(135deg, #1A4A2A, #0D2818); }
+.cl-card:nth-child(6) .cl-visual { background: linear-gradient(135deg, #4A1A6A, #2A0D40); }
+.cl-body { padding: 22px 20px; }
+.cl-body h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; font-family: 'Playfair Display', serif; }
+.cl-body p { font-size: 13px; opacity: 0.6; line-height: 1.6; }
+
+/* ── ALUMNI ── */
+.alumni-sec { background: var(--cream); }
+.alumni-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 50px;
+}
+.alumni-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 28px 24px;
+  border: 1px solid rgba(11,29,58,0.07);
+  transition: all 0.3s;
+  text-align: center;
+}
+.alumni-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(11,29,58,0.1); }
+.alumni-avatar {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  background: linear-gradient(135deg, var(--navy), var(--teal));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  border: 3px solid var(--gold-pale);
+}
+.alumni-card h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.alumni-card .role { font-size: 13px; color: #7A8A9A; margin-bottom: 12px; }
+.alumni-card .company {
+  display: inline-block;
+  background: var(--navy);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+.alumni-batch { font-size: 11px; color: #9AA0AB; margin-top: 8px; }
+
+/* ── TESTIMONIALS ── */
+.testimonials-sec { background: var(--white); }
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 50px;
+}
+.test-card {
+  background: var(--white);
+  border: 1px solid rgba(11,29,58,0.08);
+  border-radius: 16px;
+  padding: 30px 28px;
+  position: relative;
+  transition: all 0.3s;
+}
+.test-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(11,29,58,0.08); }
+.test-quote {
+  font-size: 48px;
+  color: var(--gold);
+  line-height: 0.5;
+  margin-bottom: 18px;
+  font-family: 'Playfair Display', serif;
+  opacity: 0.6;
+}
+.test-text { font-size: 14.5px; color: #4A5A6A; line-height: 1.75; margin-bottom: 24px; font-style: italic; }
+.test-author { display: flex; align-items: center; gap: 12px; }
+.test-avatar {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), var(--teal));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--gold);
+  font-size: 16px;
+}
+.test-author-info h4 { font-size: 15px; font-weight: 700; color: var(--navy); }
+.test-author-info p { font-size: 12px; color: #8A9AAA; }
+.stars { color: var(--gold); font-size: 13px; margin-bottom: 14px; }
+
+/* ── NEWS ── */
+.news-sec { background: var(--cream); }
+.news-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 40px;
+  background: rgba(11,29,58,0.05);
+  padding: 6px;
+  border-radius: 10px;
+  display: inline-flex;
+}
+.ntab {
+  padding: 9px 22px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  border: none;
+  background: transparent;
+  color: rgba(11,29,58,0.5);
+}
+.ntab.active { background: var(--navy); color: var(--gold); }
+.news-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 20px;
+}
+.ncard {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(11,29,58,0.07);
+  transition: all 0.3s;
+}
+.ncard:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(11,29,58,0.1); }
+.ncard-visual {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+.ncard:nth-child(1) .ncard-visual { background: linear-gradient(135deg, var(--navy), var(--navy-mid)); height: 220px; }
+.ncard:nth-child(2) .ncard-visual { background: linear-gradient(135deg, var(--teal), #0D4E57); }
+.ncard:nth-child(3) .ncard-visual { background: linear-gradient(135deg, #8B1A4A, #5A0D2F); }
+.ncard-body { padding: 22px 20px; }
+.ncard-cat {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.ncard-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.3; }
+.ncard-body p { font-size: 13.5px; color: #7A8A9A; line-height: 1.6; margin-bottom: 14px; }
+.ncard-date { font-size: 12px; color: #9AA0AB; font-family: 'Space Mono', monospace; }
+
+/* ── ADMISSION CTA ── */
+.admission-band {
+  background: linear-gradient(135deg, var(--gold) 0%, #8B6A14 60%, var(--navy) 100%);
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.admission-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.admission-band h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 3.5vw, 50px);
+  font-weight: 900;
+  color: var(--navy);
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+.admission-band p {
+  font-size: 18px;
+  color: rgba(11,29,58,0.75);
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 1;
+}
+.admission-ctas {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+.btn-dark {
+  background: var(--navy);
+  color: var(--gold);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-dark:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(11,29,58,0.4); }
+.btn-outline-dark {
+  background: transparent;
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 8px;
+  border: 2px solid var(--navy);
+  cursor: pointer;
+  transition: all 0.25s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-outline-dark:hover { background: var(--navy); color: var(--gold); }
+
+/* ── ACCREDITATIONS ── */
+.accred-sec { background: var(--white); padding: 60px 0; }
+.accred-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.accred-badge {
+  background: var(--cream);
+  border: 1px solid rgba(11,29,58,0.08);
+  border-radius: 12px;
+  padding: 18px 28px;
+  text-align: center;
+  transition: all 0.3s;
+  min-width: 130px;
+}
+.accred-badge:hover { background: var(--navy); color: white; transform: translateY(-3px); }
+.accred-badge .ab-icon { font-size: 30px; margin-bottom: 8px; }
+.accred-badge .ab-name { font-size: 12px; font-weight: 700; letter-spacing: 0.8px; color: var(--navy); }
+.accred-badge:hover .ab-name { color: var(--gold); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy);
+  color: white;
+  padding: 80px 0 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-brand .logo-wrap { margin-bottom: 18px; }
+.footer-brand p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.75; max-width: 280px; margin-bottom: 20px; }
+.social-row { display: flex; gap: 10px; }
+.social-btn {
+  width: 38px; height: 38px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.07);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.6);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.social-btn:hover { background: var(--gold); color: var(--navy); }
+.footer-col h4 { font-size: 13px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { color: rgba(255,255,255,0.55); font-size: 14px; text-decoration: none; transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--gold); }
+.footer-contact { font-size: 13.5px; color: rgba(255,255,255,0.55); line-height: 1.9; }
+.footer-contact p { display: flex; gap: 8px; margin-bottom: 8px; }
+.footer-bottom {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-left.visible { opacity: 1; transform: none; }
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-right.visible { opacity: 1; transform: none; }
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+/* ── VIRTUAL TOUR BUTTON ── */
+.virtual-sec {
+  background: var(--cream);
+  text-align: center;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+.tour-box {
+  background: var(--navy);
+  border-radius: 24px;
+  padding: 70px 60px;
+  position: relative;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.tour-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,162,39,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,162,39,0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.tour-box h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+.tour-box p {
+  color: rgba(255,255,255,0.6);
+  font-size: 16px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+.btn-tour-big {
+  background: linear-gradient(135deg, var(--gold), #8B6A14);
+  color: var(--navy);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 40px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+.btn-tour-big:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(201,162,39,0.4); }
+
+/* ── PROGRAMS TABS CONTENT ── */
+.tab-content { display: none; }
+.tab-content.active { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .numbers-grid { grid-template-columns: repeat(3, 1fr); }
+  .programs-grid, .research-grid { grid-template-columns: repeat(2, 1fr); }
+  .placement-inner { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .alumni-grid { grid-template-columns: repeat(2, 1fr); }
+  .test-grid { grid-template-columns: 1fr 1fr; }
+  .news-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .collab-stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .utility-bar .container { flex-direction: column; gap: 8px; }
+  .ub-badges { flex-wrap: wrap; gap: 8px; }
+  nav { display: none; }
+  .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+  .programs-grid, .research-grid { grid-template-columns: 1fr; }
+  .why-grid, .alumni-grid, .test-grid, .news-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .tab-content.active { grid-template-columns: 1fr; }
+  .collab-stats { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- ── UTILITY BAR ── -->
+<div class="utility-bar">
+  <div class="container">
+    <div class="ub-badges">
+      <div class="ub-badge"><span class="dot"></span>NAAC Accredited</div>
+      <div class="ub-badge"><span class="dot"></span>NBA Programs</div>
+      <div class="ub-badge"><span class="dot"></span>Autonomous</div>
+      <div class="ub-badge"><span class="dot"></span>UGC Approved</div>
+      <div class="ub-badge"><span class="dot"></span>JNTUA Affiliated</div>
+    </div>
+    <div class="ub-links">
+      <a href="#">IQAC</a>
+      <a href="#">LMS</a>
+      <a href="#">Alumni</a>
+      <a href="#">Careers</a>
+      <a href="#" class="btn-erp">ERP Login</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header id="main-header">
+  <div class="header-inner">
+    <a href="#" class="logo-wrap">
+      <div class="logo-icon">SR</div>
+      <div class="logo-text">
+        <span class="name">Santhiram Engineering College</span>
+        <span class="sub">Autonomous · Nandyal, Andhra Pradesh</span>
+      </div>
+    </a>
+    <nav>
+      <a href="#">About</a>
+      <a href="#">Academics</a>
+      <a href="#">Departments</a>
+      <a href="#">Research</a>
+      <a href="#">Admissions</a>
+      <a href="#">Placements</a>
+      <a href="#">Campus Life</a>
+      <a href="#">IQAC</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#" class="btn-tour">🎥 Virtual Tour</a>
+      <a href="#" class="btn-apply">Apply Now 2026</a>
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="particles" id="particles"></div>
+
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag">Admissions Open 2026–27</div>
+      <h1 class="hero-h1">
+        Empowering<br>
+        Future <em>Engineers</em><br>
+        &amp; Innovators
+      </h1>
+      <p class="hero-sub">
+        A premier autonomous institution in Andhra Pradesh — shaping industry-ready engineers through world-class curriculum, cutting-edge research, and 100% placement assistance.
+      </p>
+      <div class="hero-pills">
+        <span class="pill gold">NBA Accredited</span>
+        <span class="pill">NAAC Accredited</span>
+        <span class="pill">Industry Integrated</span>
+        <span class="pill">JNTUA Affiliated</span>
+        <span class="pill gold">100% Placement Support</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="#" class="btn-primary">Apply for Admissions →</a>
+        <a href="#" class="btn-secondary">🎓 Explore Programs</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hstat">
+          <span class="hstat-num" data-target="20">0</span>
+          <span class="hstat-lbl">Years of Excellence</span>
+        </div>
+        <div class="hstat">
+          <span class="hstat-num" data-target="10000">0</span>
+          <span class="hstat-lbl">Alumni Network</span>
+        </div>
+        <div class="hstat">
+          <span class="hstat-num" data-target="500">0</span>
+          <span class="hstat-lbl">Recruiters</span>
+        </div>
+        <div class="hstat">
+          <span class="hstat-num" data-target="8000">0</span>
+          <span class="hstat-lbl">Students</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="campus-3d">
+        <!-- Floating cards -->
+        <div class="float-card" style="top:-20px;left:-30px">
+          <span class="fc-num">₹12 LPA</span>
+          <span class="fc-lbl">Highest Package</span>
+        </div>
+        <div class="float-card" style="bottom:40px;left:-20px">
+          <span class="fc-num">300+</span>
+          <span class="fc-lbl">Placed in 2024</span>
+        </div>
+        <div class="float-card" style="top:60px;right:-30px">
+          <span class="fc-num">120+</span>
+          <span class="fc-lbl">MoU Partners</span>
+        </div>
+
+        <div class="campus-card">
+          <div class="campus-visual">
+            <!-- SVG Campus Illustration -->
+            <svg viewBox="0 0 560 420" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#0B1D3A"/>
+                  <stop offset="100%" stop-color="#1a3060"/>
+                </linearGradient>
+                <linearGradient id="gold-g" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#C9A227"/>
+                  <stop offset="100%" stop-color="#E8C547"/>
+                </linearGradient>
+              </defs>
+              <!-- Sky -->
+              <rect fill="url(#sky)" width="560" height="420"/>
+              <!-- Stars -->
+              <circle cx="50" cy="40" r="1.5" fill="white" opacity="0.6"/>
+              <circle cx="120" cy="20" r="1" fill="white" opacity="0.4"/>
+              <circle cx="250" cy="35" r="1.5" fill="white" opacity="0.5"/>
+              <circle cx="400" cy="25" r="1" fill="white" opacity="0.6"/>
+              <circle cx="500" cy="15" r="1.5" fill="white" opacity="0.4"/>
+              <circle cx="340" cy="50" r="1" fill="white" opacity="0.5"/>
+              <!-- Ground -->
+              <rect x="0" y="340" width="560" height="80" fill="#0a1830" opacity="0.8"/>
+              <!-- Road -->
+              <rect x="220" y="310" width="120" height="110" fill="#162040"/>
+              <rect x="275" y="305" width="10" height="120" fill="#C9A227" opacity="0.3"/>
+              <!-- Main Building -->
+              <rect x="80" y="160" width="400" height="185" rx="4" fill="#122244"/>
+              <rect x="80" y="155" width="400" height="12" rx="2" fill="#C9A227" opacity="0.8"/>
+              <!-- Columns -->
+              <rect x="110" y="185" width="14" height="160" rx="3" fill="#0B1D3A"/>
+              <rect x="150" y="185" width="14" height="160" rx="3" fill="#0B1D3A"/>
+              <rect x="190" y="185" width="14" height="160" rx="3" fill="#0B1D3A"/>
+              <rect x="380" y="185" width="14" height="160" rx="3" fill="#0B1D3A"/>
+              <rect x="416" y="185" width="14" height="160" rx="3" fill="#0B1D3A"/>
+              <rect x="452" y="185" width="14" height="160" rx="3" fill="#0B1D3A"/>
+              <!-- Windows -->
+              <rect x="220" y="200" width="30" height="35" rx="3" fill="#1A7A8A" opacity="0.9"/>
+              <rect x="265" y="200" width="30" height="35" rx="3" fill="#1A7A8A" opacity="0.7"/>
+              <rect x="310" y="200" width="30" height="35" rx="3" fill="white" opacity="0.15"/>
+              <rect x="220" y="255" width="30" height="35" rx="3" fill="white" opacity="0.12"/>
+              <rect x="265" y="255" width="30" height="35" rx="3" fill="#1A7A8A" opacity="0.5"/>
+              <rect x="310" y="255" width="30" height="35" rx="3" fill="#1A7A8A" opacity="0.9"/>
+              <!-- Entrance -->
+              <rect x="240" y="290" width="80" height="55" rx="4" fill="#0B1D3A"/>
+              <rect x="238" y="287" width="84" height="8" rx="2" fill="#C9A227" opacity="0.9"/>
+              <!-- Clock tower / dome top -->
+              <polygon points="280,80 250,155 310,155" fill="#C9A227" opacity="0.9"/>
+              <rect x="265" y="125" width="30" height="35" fill="#122244"/>
+              <circle cx="280" cy="118" r="18" fill="none" stroke="#C9A227" stroke-width="3" opacity="0.8"/>
+              <line x1="280" y1="104" x2="280" y2="118" stroke="#C9A227" stroke-width="2"/>
+              <line x1="280" y1="118" x2="292" y2="118" stroke="#C9A227" stroke-width="2"/>
+              <!-- Trees -->
+              <circle cx="40" cy="300" r="30" fill="#1A4A2A" opacity="0.8"/>
+              <rect x="36" y="320" width="8" height="25" fill="#2D6B1A" opacity="0.8"/>
+              <circle cx="520" cy="290" r="28" fill="#1A4A2A" opacity="0.8"/>
+              <rect x="516" y="308" width="8" height="25" fill="#2D6B1A" opacity="0.8"/>
+              <circle cx="520" cy="270" r="16" fill="#2D6B1A" opacity="0.6"/>
+              <!-- SREC text on building -->
+              <text x="280" y="235" text-anchor="middle" font-family="serif" font-size="11" fill="#C9A227" opacity="0.9" font-weight="bold">SANTHIRAM</text>
+              <text x="280" y="248" text-anchor="middle" font-family="serif" font-size="8" fill="#C9A227" opacity="0.6">ENGINEERING COLLEGE</text>
+              <!-- Flag -->
+              <line x1="280" y1="60" x2="280" y2="82" stroke="#C9A227" stroke-width="2"/>
+              <polygon points="280,62 295,68 280,74" fill="#C9A227" opacity="0.9"/>
+              <!-- Light beams from building -->
+              <line x1="250" y1="288" x2="200" y2="340" stroke="#C9A227" stroke-width="0.5" opacity="0.2"/>
+              <line x1="310" y1="288" x2="360" y2="340" stroke="#C9A227" stroke-width="0.5" opacity="0.2"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ── NUMBERS ── -->
+<section class="numbers-sec">
+  <div class="container">
+    <div class="numbers-grid">
+      <div class="ncard reveal">
+        <span class="ncard-icon">🎓</span>
+        <span class="ncard-num" data-target="8000">0</span>
+        <span class="ncard-lbl">Students</span>
+      </div>
+      <div class="ncard reveal delay-1">
+        <span class="ncard-icon">👨‍🏫</span>
+        <span class="ncard-num" data-target="450">0</span>
+        <span class="ncard-lbl">Faculty Members</span>
+      </div>
+      <div class="ncard reveal delay-2">
+        <span class="ncard-icon">🔬</span>
+        <span class="ncard-num" data-target="60">0</span>
+        <span class="ncard-lbl">Laboratories</span>
+      </div>
+      <div class="ncard reveal delay-3">
+        <span class="ncard-icon">🤝</span>
+        <span class="ncard-num" data-target="120">0</span>
+        <span class="ncard-lbl">MoU Partners</span>
+      </div>
+      <div class="ncard reveal delay-4">
+        <span class="ncard-icon">💼</span>
+        <span class="ncard-num" data-target="300">0</span>
+        <span class="ncard-lbl">Placements 2024</span>
+      </div>
+      <div class="ncard reveal delay-5">
+        <span class="ncard-icon">📜</span>
+        <span class="ncard-num" data-target="40">0</span>
+        <span class="ncard-lbl">Patents & Publications</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ACCREDITATIONS ── -->
+<section class="accred-sec">
+  <div class="container">
+    <div class="accred-row reveal">
+      <div class="accred-badge"><div class="ab-icon">🏆</div><div class="ab-name">NAAC</div></div>
+      <div class="accred-badge"><div class="ab-icon">🎖️</div><div class="ab-name">NBA</div></div>
+      <div class="accred-badge"><div class="ab-icon">⚖️</div><div class="ab-name">UGC</div></div>
+      <div class="accred-badge"><div class="ab-icon">🎓</div><div class="ab-name">Autonomous</div></div>
+      <div class="accred-badge"><div class="ab-icon">🏛️</div><div class="ab-name">JNTUA</div></div>
+      <div class="accred-badge"><div class="ab-icon">🌐</div><div class="ab-name">AICTE</div></div>
+      <div class="accred-badge"><div class="ab-icon">🔬</div><div class="ab-name">IQAC</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROGRAMS ── -->
+<section class="programs-sec">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Academic Programs</div>
+      <h2 class="section-h2">Explore Our Courses</h2>
+      <p class="section-sub">Industry-aligned curriculum designed to produce world-class engineers, researchers and entrepreneurs.</p>
+    </div>
+
+    <div style="margin-top:40px;margin-bottom:44px" class="reveal">
+      <div class="programs-tabs">
+        <button class="ptab active" onclick="switchTab('ug', this)">Undergraduate (B.Tech)</button>
+        <button class="ptab" onclick="switchTab('pg', this)">Postgraduate</button>
+        <button class="ptab" onclick="switchTab('phd', this)">Ph.D Research</button>
+      </div>
+    </div>
+
+    <div id="tab-ug" class="tab-content active">
+      <div class="pcard reveal">
+        <div class="pcard-icon">💻</div>
+        <h3>Computer Science &amp; Engineering</h3>
+        <div class="pcard-meta"><span>⏱ 4 Years</span><span>👥 180 Intake</span></div>
+        <div class="pcard-badge">NBA Accredited</div>
+        <a href="#" class="pcard-link">View Details →</a>
+      </div>
+      <div class="pcard reveal delay-1">
+        <div class="pcard-icon">🤖</div>
+        <h3>AI &amp; Data Science</h3>
+        <div class="pcard-meta"><span>⏱ 4 Years</span><span>👥 60 Intake</span></div>
+        <div class="pcard-badge">New Specialisation</div>
+        <a href="#" class="pcard-link">View Details →</a>
+      </div>
+      <div class="pcard reveal delay-2">
+        <div class="pcard-icon">📡</div>
+        <h3>Electronics &amp; Communication</h3>
+        <div class="pcard-meta"><span>⏱ 4 Years</span><span>👥 120 Intake</span></div>
+        <div class="pcard-badge">NBA Accredited</div>
+        <a href="#" class="pcard-link">View Details →</a>
+      </div>
+      <div class="pcard reveal delay-3">
+        <div class="pcard-icon">⚡</div>
+        <h3>Electrical &amp; Electronics</h3>
+        <div class="pcard-meta"><span>⏱ 4 Years</span><span>👥 60 Intake</span></div>
+        <div class="pcard-badge">NBA Accredited</div>
+        <a href="#" class="pcard-link">View Details →</a>
+      </div>
+      <div class="pcard reveal delay-4">
+        <div class="pcard-icon">⚙️</div>
+        <h3>Mechanical Engineering</h3>
+        <div class="pcard-meta"><span>⏱ 4 Years</span><span>👥 120 Intake</span></div>
+        <div class="pcard-badge">AICTE Approved</div>
+        <a href="#" class="pcard-link">View Details →</a>
+      </div>
+      <div class="pcard reveal delay-5">
+        <div class="pcard-icon">🏗️</div>
+        <h3>Civil Engineering</h3>
+        <div class="pcard-meta"><span>⏱ 4 Years</span><span>👥 60 Intake</span></div>
+        <div class="pcard-badge">AICTE Approved</div>
+        <a href="#" class="pcard-link">View Details →</a>
+      </div>
+    </div>
+
+    <div id="tab-pg" class="tab-content">
+      <div class="pcard">
+        <div class="pcard-icon">🎓</div>
+        <h3>M.Tech – CSE</h3>
+        <div class="pcard-meta"><span>⏱ 2 Years</span><span>👥 18 Intake</span></div>
+        <div class="pcard-badge">JNTUA</div>
+        <a href="#" class="pcard-link">View Details →</a>
+      </div>
+      <div class="pcard">
+        <div class="pcard-icon">📊</div>
+        <h3>MBA</h3>
+        <div class="pcard-meta"><span>⏱ 2 Years</span><span>👥 60 Intake</span></div>
+        <div class="pcard-badge">AICTE Approved</div>
+        <a href="#" class="pcard-link">View Details →</a>
+      </div>
+      <div class="pcard">
+        <div class="pcard-icon">🖥️</div>
+        <h3>MCA</h3>
+        <div class="pcard-meta"><span>⏱ 2 Years</span><span>👥 60 Intake</span></div>
+        <div class="pcard-badge">AICTE Approved</div>
+        <a href="#" class="pcard-link">View Details →</a>
+      </div>
+    </div>
+
+    <div id="tab-phd" class="tab-content">
+      <div class="pcard">
+        <div class="pcard-icon">🔬</div>
+        <h3>Ph.D in Engineering</h3>
+        <div class="pcard-meta"><span>⏱ 3–5 Years</span><span>👥 Limited Seats</span></div>
+        <div class="pcard-badge">Research Program</div>
+        <a href="#" class="pcard-link">View Details →</a>
+      </div>
+      <div class="pcard">
+        <div class="pcard-icon">📚</div>
+        <h3>Ph.D in Management</h3>
+        <div class="pcard-meta"><span>⏱ 3–5 Years</span><span>👥 Limited Seats</span></div>
+        <div class="pcard-badge">Research Program</div>
+        <a href="#" class="pcard-link">View Details →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESEARCH ── -->
+<section class="research-sec">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Research &amp; Innovation</div>
+      <h2 class="section-h2">Our Innovation Ecosystem</h2>
+      <p class="section-sub">Nurturing a culture of research, invention, and entrepreneurship through state-of-the-art infrastructure and funded projects.</p>
+    </div>
+
+    <div class="research-grid">
+      <div class="rcard reveal">
+        <div class="rcard-icon">🏛️</div>
+        <h3>Centers of Excellence</h3>
+        <p>Dedicated R&D centers for AI, IoT, Robotics, and sustainable energy — equipped with cutting-edge tools.</p>
+        <div class="rcard-num">6</div>
+      </div>
+      <div class="rcard reveal delay-1">
+        <div class="rcard-icon">💰</div>
+        <h3>Funded Projects</h3>
+        <p>Grants from DST, AICTE, SERB, and DRDO driving impactful applied research across engineering domains.</p>
+        <div class="rcard-num">₹2.4Cr</div>
+      </div>
+      <div class="rcard reveal delay-2">
+        <div class="rcard-icon">📜</div>
+        <h3>Patents &amp; Publications</h3>
+        <p>Faculty and students contributing to national and international intellectual property and peer-reviewed journals.</p>
+        <div class="rcard-num">40+</div>
+      </div>
+      <div class="rcard reveal delay-3">
+        <div class="rcard-icon">🚀</div>
+        <h3>Start-up Incubation</h3>
+        <p>SREC-IIC incubation cell supporting student entrepreneurs with mentorship, seed funding, and market access.</p>
+        <div class="rcard-num">12+</div>
+      </div>
+      <div class="rcard reveal delay-4">
+        <div class="rcard-icon">🤝</div>
+        <h3>Industry Consultancy</h3>
+        <p>Active consultancy partnerships with regional industries — solving real-world problems with academic expertise.</p>
+        <div class="rcard-num">25+</div>
+      </div>
+      <div class="rcard reveal delay-5">
+        <div class="rcard-icon">🌐</div>
+        <h3>IIC Activities</h3>
+        <p>Institution's Innovation Council conducting hackathons, idea challenges, and innovation boot camps year-round.</p>
+        <div class="rcard-num">50+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PLACEMENTS ── -->
+<section class="placements-sec">
+  <div class="container">
+    <div class="placement-inner">
+      <div class="reveal-left">
+        <div class="section-label">Career Outcomes</div>
+        <h2 class="section-h2">Placements &amp; Careers</h2>
+        <p class="section-sub">Our dedicated Training &amp; Placement Cell has consistently delivered exceptional career outcomes for every graduating batch.</p>
+
+        <div class="placement-stats-grid">
+          <div class="ps-card highlight">
+            <span class="ps-num">₹12 LPA</span>
+            <div class="ps-lbl">Highest Package Offered</div>
+          </div>
+          <div class="ps-card">
+            <span class="ps-num">₹4.8 LPA</span>
+            <div class="ps-lbl">Average Package</div>
+          </div>
+          <div class="ps-card">
+            <span class="ps-num">300+</span>
+            <div class="ps-lbl">Total Offers 2024</div>
+          </div>
+          <div class="ps-card">
+            <span class="ps-num">500+</span>
+            <div class="ps-lbl">Recruiters on Campus</div>
+          </div>
+          <div class="ps-card">
+            <span class="ps-num">85%</span>
+            <div class="ps-lbl">Placement Rate</div>
+          </div>
+          <div class="ps-card">
+            <span class="ps-num">40+</span>
+            <div class="ps-lbl">Dream Offers</div>
+          </div>
+        </div>
+        <br>
+        <a href="#" class="btn-primary" style="display:inline-flex;margin-top:10px">View Placement Report →</a>
+      </div>
+
+      <div class="reveal-right">
+        <div class="section-label">Our Recruiters</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:30px">500+ Companies Trust SREC</h3>
+        <div class="recruiters-section">
+          <div class="recruiters-track">
+            <div class="recruiters-slider" id="slider1">
+              <div class="rec-logo">💼 TCS</div>
+              <div class="rec-logo">🔷 Infosys</div>
+              <div class="rec-logo">🟣 Wipro</div>
+              <div class="rec-logo">🔵 Accenture</div>
+              <div class="rec-logo">🟢 Cognizant</div>
+              <div class="rec-logo">🔶 Capgemini</div>
+              <div class="rec-logo">⚡ Tech Mahindra</div>
+              <div class="rec-logo">🌐 HCL Technologies</div>
+              <div class="rec-logo">📦 Amazon</div>
+              <div class="rec-logo">🔍 L&T Infotech</div>
+              <!-- Duplicate for seamless loop -->
+              <div class="rec-logo">💼 TCS</div>
+              <div class="rec-logo">🔷 Infosys</div>
+              <div class="rec-logo">🟣 Wipro</div>
+              <div class="rec-logo">🔵 Accenture</div>
+              <div class="rec-logo">🟢 Cognizant</div>
+              <div class="rec-logo">🔶 Capgemini</div>
+              <div class="rec-logo">⚡ Tech Mahindra</div>
+              <div class="rec-logo">🌐 HCL Technologies</div>
+              <div class="rec-logo">📦 Amazon</div>
+              <div class="rec-logo">🔍 L&T Infotech</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="recruiters-section" style="margin-top:16px">
+          <div class="recruiters-track">
+            <div class="recruiters-slider" id="slider2" style="animation-direction:reverse;animation-duration:22s">
+              <div class="rec-logo">🏭 BHEL</div>
+              <div class="rec-logo">🔋 NTPC</div>
+              <div class="rec-logo">🛢️ ONGC</div>
+              <div class="rec-logo">💡 APTRANSCO</div>
+              <div class="rec-logo">🚀 ISRO Vendors</div>
+              <div class="rec-logo">🏗️ L&T Construction</div>
+              <div class="rec-logo">🖥️ Oracle</div>
+              <div class="rec-logo">☁️ Zoho</div>
+              <div class="rec-logo">📊 Deloitte</div>
+              <div class="rec-logo">🔒 IBM</div>
+              <!-- Duplicate -->
+              <div class="rec-logo">🏭 BHEL</div>
+              <div class="rec-logo">🔋 NTPC</div>
+              <div class="rec-logo">🛢️ ONGC</div>
+              <div class="rec-logo">💡 APTRANSCO</div>
+              <div class="rec-logo">🚀 ISRO Vendors</div>
+              <div class="rec-logo">🏗️ L&T Construction</div>
+              <div class="rec-logo">🖥️ Oracle</div>
+              <div class="rec-logo">☁️ Zoho</div>
+              <div class="rec-logo">📊 Deloitte</div>
+              <div class="rec-logo">🔒 IBM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY CHOOSE ── -->
+<section class="why-sec">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto">
+      <div class="section-label" style="justify-content:center">Why SREC</div>
+      <h2 class="section-h2">Your Gateway to a World-Class Career</h2>
+      <p class="section-sub" style="margin:0 auto">Everything designed to accelerate your engineering journey — from day one to placement day.</p>
+    </div>
+
+    <div class="why-grid" style="margin-top:50px">
+      <div class="why-card reveal">
+        <div class="why-icon">📋</div>
+        <h3>Autonomous Curriculum</h3>
+        <p>Flexible, industry-designed syllabus updated every semester with latest technologies and skill modules.</p>
+      </div>
+      <div class="why-card reveal delay-1">
+        <div class="why-icon">🏅</div>
+        <h3>NBA Accredited Programs</h3>
+        <p>Multiple programs accredited by NBA, ensuring quality benchmarked against national standards.</p>
+      </div>
+      <div class="why-card reveal delay-2">
+        <div class="why-icon">🎯</div>
+        <h3>Industry Certifications</h3>
+        <p>Partnerships with AWS, Microsoft, Oracle, and Coursera embed global certifications into the curriculum.</p>
+      </div>
+      <div class="why-card reveal delay-3">
+        <div class="why-icon">🖥️</div>
+        <h3>Smart Classrooms</h3>
+        <p>Technology-enabled learning environments with smart boards, projectors, and digital learning tools.</p>
+      </div>
+      <div class="why-card reveal delay-1">
+        <div class="why-icon">📚</div>
+        <h3>Digital Library</h3>
+        <p>Access to 50,000+ e-books, international journals, IEEE, Springer databases and NPTEL resources.</p>
+      </div>
+      <div class="why-card reveal delay-2">
+        <div class="why-icon">💡</div>
+        <h3>Innovation Hub</h3>
+        <p>IIC-supported hackathons, ideathons, and maker spaces to build entrepreneurs and innovators.</p>
+      </div>
+      <div class="why-card reveal delay-3">
+        <div class="why-icon">🏠</div>
+        <h3>Hostel &amp; Transport</h3>
+        <p>Separate boys and girls hostels with modern amenities, 24/7 security, and campus transport network.</p>
+      </div>
+      <div class="why-card reveal delay-4">
+        <div class="why-icon">🌟</div>
+        <h3>Expert Faculty</h3>
+        <p>450+ qualified faculty including PhD holders, industry veterans, and research scholars guiding students.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CAMPUS LIFE ── -->
+<section class="campus-sec">
+  <div class="container">
+    <div class="reveal" style="color:white">
+      <div class="section-label" style="color:var(--gold)">Beyond Academics</div>
+      <h2 class="section-h2" style="color:white">Life at SREC</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.6)">A vibrant campus ecosystem that shapes not just engineers — but leaders, innovators, and well-rounded individuals.</p>
+    </div>
+  </div>
+  <div class="campus-scroll-wrap" id="campusScroll">
+    <div class="campus-scroll">
+      <div class="cl-card">
+        <div class="cl-visual">🤖</div>
+        <div class="cl-body">
+          <h3>Technical Clubs</h3>
+          <p>Robotics, coding, cybersecurity, IoT clubs running 100+ events per year. Build real-world projects.</p>
+        </div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-visual">🎉</div>
+        <div class="cl-body">
+          <h3>Fests &amp; Events</h3>
+          <p>Annual cultural fest, technical symposiums, and national-level competitions attracting colleges statewide.</p>
+        </div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-visual">🏅</div>
+        <div class="cl-body">
+          <h3>NSS &amp; NCC</h3>
+          <p>Active NSS wing with community service drives. NCC unit producing disciplined, socially responsible leaders.</p>
+        </div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-visual">⚽</div>
+        <div class="cl-body">
+          <h3>Sports &amp; Athletics</h3>
+          <p>Cricket, football, basketball, kabaddi, volleyball — indoor and outdoor facilities supporting every sport.</p>
+        </div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-visual">🎭</div>
+        <div class="cl-body">
+          <h3>Cultural Activities</h3>
+          <p>Dance, music, drama, fine arts clubs nurturing creative expression and cultural identity on campus.</p>
+        </div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-visual">💡</div>
+        <div class="cl-body">
+          <h3>Hackathons &amp; Workshops</h3>
+          <p>Monthly workshops with industry experts, 24-hour hackathons, and project showcases for all students.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ALUMNI ── -->
+<section class="alumni-sec">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Distinguished Alumni</div>
+      <h2 class="section-h2">Our Pride, Your Inspiration</h2>
+      <p class="section-sub">SREC alumni are making an impact at top companies and organisations across the globe.</p>
+    </div>
+
+    <div class="alumni-grid">
+      <div class="alumni-card reveal">
+        <div class="alumni-avatar">R</div>
+        <h3>Ravi Kumar</h3>
+        <div class="role">Senior Software Engineer</div>
+        <span class="company">TCS · Hyderabad</span>
+        <div class="alumni-batch">B.Tech CSE, Batch 2018</div>
+      </div>
+      <div class="alumni-card reveal delay-1">
+        <div class="alumni-avatar">P</div>
+        <h3>Priya Nair</h3>
+        <div class="role">Data Science Lead</div>
+        <span class="company">Accenture · Bangalore</span>
+        <div class="alumni-batch">B.Tech AI&DS, Batch 2020</div>
+      </div>
+      <div class="alumni-card reveal delay-2">
+        <div class="alumni-avatar">S</div>
+        <h3>Srinivas Reddy</h3>
+        <div class="role">Systems Engineer</div>
+        <span class="company">Infosys · Pune</span>
+        <div class="alumni-batch">B.Tech ECE, Batch 2019</div>
+      </div>
+      <div class="alumni-card reveal delay-3">
+        <div class="alumni-avatar">A</div>
+        <h3>Anitha Devi</h3>
+        <div class="role">Project Manager</div>
+        <span class="company">Wipro · Chennai</span>
+        <div class="alumni-batch">MBA, Batch 2017</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px" class="reveal">
+      <a href="#" class="btn-primary">Explore Alumni Network →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── COLLABORATIONS ── -->
+<section class="collab-sec">
+  <div class="container">
+    <div class="reveal" style="color:white">
+      <div class="section-label" style="color:var(--gold)">Global Reach</div>
+      <h2 class="section-h2" style="color:white">International Collaborations</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.6)">Partnered with leading industries, research institutions, and foreign universities across 20+ countries.</p>
+    </div>
+
+    <div class="collab-stats">
+      <div class="cs-card reveal">
+        <span class="cs-num">120+</span>
+        <div class="cs-lbl">MoU Partners</div>
+      </div>
+      <div class="cs-card reveal delay-1">
+        <span class="cs-num">15+</span>
+        <div class="cs-lbl">Foreign Universities</div>
+      </div>
+      <div class="cs-card reveal delay-2">
+        <span class="cs-num">50+</span>
+        <div class="cs-lbl">Industry Partners</div>
+      </div>
+      <div class="cs-card reveal delay-3">
+        <span class="cs-num">20+</span>
+        <div class="cs-lbl">Countries Covered</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials-sec">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto">
+      <div class="section-label" style="justify-content:center">Voices</div>
+      <h2 class="section-h2">What They Say About SREC</h2>
+    </div>
+
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="stars">★★★★★</div>
+        <div class="test-quote">"</div>
+        <p class="test-text">SREC gave me not just an education, but a complete foundation. The faculty's mentorship and placement training helped me secure a role at TCS with a competitive package right out of college.</p>
+        <div class="test-author">
+          <div class="test-avatar">R</div>
+          <div class="test-author-info">
+            <h4>Ravi Kumar</h4>
+            <p>Software Engineer · TCS, Batch 2022</p>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal delay-2">
+        <div class="stars">★★★★★</div>
+        <div class="test-quote">"</div>
+        <p class="test-text">The labs are world-class and the exposure to real projects was incredible. I developed skills that directly apply to my work at Accenture every single day.</p>
+        <div class="test-author">
+          <div class="test-avatar">P</div>
+          <div class="test-author-info">
+            <h4>Priya Nair</h4>
+            <p>Data Science Lead · Accenture</p>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal delay-4">
+        <div class="stars">★★★★★</div>
+        <div class="test-quote">"</div>
+        <p class="test-text">We have consistently found SREC graduates to be well-prepared, technically strong, and professionally oriented. They adapt quickly and contribute effectively from day one.</p>
+        <div class="test-author">
+          <div class="test-avatar">H</div>
+          <div class="test-author-info">
+            <h4>HR Manager</h4>
+            <p>Cognizant Technology Solutions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWS ── -->
+<section class="news-sec">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:10px" class="reveal">
+      <div>
+        <div class="section-label">Stay Updated</div>
+        <h2 class="section-h2">News &amp; Events</h2>
+      </div>
+      <div class="news-tabs">
+        <button class="ntab active">Latest News</button>
+        <button class="ntab">Events</button>
+        <button class="ntab">Achievements</button>
+        <button class="ntab">Circulars</button>
+      </div>
+    </div>
+
+    <div class="news-grid">
+      <div class="ncard reveal">
+        <div class="ncard-visual" style="font-size:60px">🎓</div>
+        <div class="ncard-body">
+          <div class="ncard-cat">Admissions</div>
+          <h3>SREC Admissions 2026–27 Now Open — Apply Before March 31</h3>
+          <p>Applications are now being accepted for all B.Tech, M.Tech, MBA, and MCA programs for the academic year 2026–27.</p>
+          <div class="ncard-date">Feb 15, 2026</div>
+        </div>
+      </div>
+      <div class="ncard reveal delay-2">
+        <div class="ncard-visual">🏆</div>
+        <div class="ncard-body">
+          <div class="ncard-cat">Achievement</div>
+          <h3>SREC Students Win National Hackathon Organised by AICTE</h3>
+          <p>Team from CSE department secured first place at AICTE's national-level Smart India Hackathon 2025.</p>
+          <div class="ncard-date">Jan 28, 2026</div>
+        </div>
+      </div>
+      <div class="ncard reveal delay-4">
+        <div class="ncard-visual">🤝</div>
+        <div class="ncard-body">
+          <div class="ncard-cat">MoU</div>
+          <h3>New MoU Signed with Leading IT Company for Industry Collaboration</h3>
+          <p>SREC signs strategic partnership agreement to provide students internship, placement, and certification opportunities.</p>
+          <div class="ncard-date">Jan 10, 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:36px" class="reveal">
+      <a href="#" class="btn-primary">View All News &amp; Events →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── VIRTUAL TOUR ── -->
+<section class="virtual-sec">
+  <div class="container">
+    <div class="tour-box reveal">
+      <h2>Experience SREC Virtually</h2>
+      <p>Take a 360° immersive tour of our campus — labs, hostels, sports grounds, and more.</p>
+      <a href="#" class="btn-tour-big">🎥 Start Virtual Campus Tour</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── ADMISSION CTA ── -->
+<section class="admission-band">
+  <div class="container">
+    <h2>Admissions Open for 2026–27</h2>
+    <p>Join 8,000+ students building the future at Santhiram Engineering College</p>
+    <div class="admission-ctas">
+      <a href="#" class="btn-dark">Apply Now →</a>
+      <a href="#" class="btn-outline-dark">Download Brochure</a>
+      <a href="#" class="btn-outline-dark">View Fee Structure</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo-wrap" style="text-decoration:none">
+          <div class="logo-icon">SR</div>
+          <div class="logo-text">
+            <span class="name">Santhiram Engineering College</span>
+            <span class="sub">Autonomous · NAAC · NBA Accredited</span>
+          </div>
+        </a>
+        <p>Empowering engineers and innovators since 2002. JNTUA affiliated autonomous institution in Nandyal, Andhra Pradesh.</p>
+        <div class="social-row">
+          <a href="#" class="social-btn">f</a>
+          <a href="#" class="social-btn">in</a>
+          <a href="#" class="social-btn">▶</a>
+          <a href="#" class="social-btn">X</a>
+          <a href="#" class="social-btn">ig</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Academics</h4>
+        <ul>
+          <li><a href="#">B.Tech Programs</a></li>
+          <li><a href="#">M.Tech Programs</a></li>
+          <li><a href="#">MBA / MCA</a></li>
+          <li><a href="#">Ph.D Research</a></li>
+          <li><a href="#">Academic Calendar</a></li>
+          <li><a href="#">Exam Results</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Admissions 2026</a></li>
+          <li><a href="#">Placements</a></li>
+          <li><a href="#">Research</a></li>
+          <li><a href="#">IQAC</a></li>
+          <li><a href="#">NBA / NAAC</a></li>
+          <li><a href="#">Anti-Ragging</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Student Portal</h4>
+        <ul>
+          <li><a href="#">ERP Login</a></li>
+          <li><a href="#">LMS</a></li>
+          <li><a href="#">Library</a></li>
+          <li><a href="#">Exam Portal</a></li>
+          <li><a href="#">Grievance Cell</a></li>
+          <li><a href="#">Alumni Portal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact">
+          <p>📍 NH-40, Panyam Road,<br>&nbsp;&nbsp;&nbsp;&nbsp;Nandyal – 518 501<br>&nbsp;&nbsp;&nbsp;&nbsp;Andhra Pradesh</p>
+          <p>📞 +91-8514-222556</p>
+          <p>✉️ principal@srecnandyal.edu.in</p>
+          <p>🌐 www.srecnandyal.edu.in</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Santhiram Engineering College. All rights reserved.</span>
+      <span>Designed with ❤️ for excellence · Privacy Policy · Disclaimer</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── HEADER SCROLL EFFECT ──
+const header = document.getElementById('main-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ── PARTICLES ──
+function createParticles() {
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 4 + 2;
+    p.style.cssText = `
+      width:${size}px;height:${size}px;
+      left:${Math.random()*100}%;
+      animation-duration:${Math.random()*15+10}s;
+      animation-delay:${Math.random()*10}s;
+      opacity:0;
+    `;
+    container.appendChild(p);
+  }
+}
+createParticles();
+
+// ── COUNTER ANIMATION ──
+function animateCounter(el, target, suffix='') {
+  const duration = 2000;
+  const start = performance.now();
+  const isLarge = target >= 1000;
+  function update(time) {
+    const elapsed = time - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(ease * target);
+    if (isLarge) {
+      el.textContent = current.toLocaleString('en-IN') + suffix;
+    } else {
+      el.textContent = current + suffix;
+    }
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+// ── SCROLL REVEAL ──
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+const counters = document.querySelectorAll('[data-target]');
+const counted = new Set();
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+revealEls.forEach(el => observer.observe(el));
+
+// Counter observer
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !counted.has(entry.target)) {
+      counted.add(entry.target);
+      const target = parseInt(entry.target.dataset.target);
+      const suffix = entry.target.dataset.suffix || '';
+      animateCounter(entry.target, target, suffix);
+    }
+  });
+}, { threshold: 0.5 });
+
+counters.forEach(el => counterObserver.observe(el));
+
+// ── PROGRAMS TABS ──
+function switchTab(id, btn) {
+  document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
+}
+
+// ── NEWS TABS ── (visual only)
+document.querySelectorAll('.ntab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.ntab').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── CAMPUS SCROLL (drag) ──
+const campusScroll = document.getElementById('campusScroll');
+let isDown = false, startX, scrollLeft;
+campusScroll.addEventListener('mousedown', e => {
+  isDown = true;
+  startX = e.pageX - campusScroll.offsetLeft;
+  scrollLeft = campusScroll.scrollLeft;
+});
+campusScroll.addEventListener('mouseleave', () => isDown = false);
+campusScroll.addEventListener('mouseup', () => isDown = false);
+campusScroll.addEventListener('mousemove', e => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - campusScroll.offsetLeft;
+  campusScroll.scrollLeft = scrollLeft - (x - startX) * 2;
+});
+
+// ── CARD 3D TILT ──
+document.querySelectorAll('.pcard, .rcard, .why-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `translateY(-5px) rotateX(${-y*8}deg) rotateY(${x*8}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+</script>
+</body>
+</html>
